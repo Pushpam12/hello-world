@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            text-align: center;
+            color:cornflowerblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg{
+            background-color: rgb(247, 223, 142);
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        button{
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 20px;
+            border:2px solid black;
+            cursor: pointer;
+        }
+        ul li{
+            list-style-type: lower-greek;
+            border-bottom: 1px solid black;
+        }
+        ul{
+            background-color: beige;
+            padding:20px 40px;
+            border: 1px solid black;
+        }
+        h1,h2{
+            text-transform: capitalize;
+            margin-bottom: 0px;
+        }
+        hr{
+            /* background-color: black; */
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <hr noshade>
+
+    <button class="btn" onclick="randomBG()"><a>Switch</a></button>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ul>
+    <script>
+        // let title = document.createElement("h1")
+        // let title2 = document.createElement("h1")
+        // title.innerText = "hello there"
+        // // title.style.color = "green"
+        // title.classList.add("head")
+        // // console.log(title);
+        // document.body.appendChild(title);
+        let div = document.getElementsByTagName("div")
+        // title2.innerText = "hello ssss"
+       
+
+        // let lists = document.getElementsByTagName("li")
+        // let a = document.getElementsByTagName("a")
+        let btn = document.getElementsByTagName("button")
+        // document.body.removeChild(btn[0])
+    
+        
+        // let ul = document.querySelector("ul")
+        // for(let i =lists.length; i>0; i--){
+        //     console.log(i-1);
+        //     ul.removeChild(lists[i-1])
+        // }
+        // document.body.addEventListener("dblclick", ki)
+        // btn[0].addEventListener("click", hola)
+
+        function randomBG(){
+            const val = "0123456789ABCDEF";
+            let ini = "#";
+            for(let i = 0; i<6; i++){
+                ini += val[Math.floor(Math.random()*16)]
+            }
+            console.log(ini);
+            document.body.style.backgroundColor = ini
+        }
+
+        function hola(){
+            document.body.classList.toggle("bg")
+            if(document.body.className.includes("bg")){
+                btn[0].innerHTML = "OFF"
+            }else{
+                btn[0].innerHTML = "ON"
+            };
+        
+        }
+
+        function ki(){
+            div[0].innerHTML = "<h1>hellow there</h1>"
+        }
+        
+
+        function callb(x, y){
+            if (x == 1){
+                y();
+            }
+        }
+
+        callb(1,ki)
+    </script>
+    
+</body>
+</html>
